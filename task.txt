@@ -1,0 +1,10 @@
+// Create a new component LoginTest theat points to "/login-test"
+// make state for name, email, password
+// make a button submit
+// make state for message
+// show message in component
+// using useEffect setMessage to "Please provide information"
+// if name is somehow "Saroj" setMessage to "Welcome saroj"
+// check the iinput on button submit, check of empty input
+// if input is empty setMessage to "Provide all information"
+// else asetMessage "Congratulation"
