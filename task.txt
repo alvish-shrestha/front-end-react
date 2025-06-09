@@ -12,3 +12,16 @@
 
 check user if user in state return
 html with "User already logged in"
+
+
+Create RouteProtection for Admin
+create /admin/dashboard
+/admin/users
+/admin/categories
+/admin/products
+Make a new AdminLayout /src/AdminLayout
+with header -> button logout
+Apply AdminLayout for these route
+Apply Admin Route Protection for these route
+Group all admin route to /admin prefix
+If admin is logged in Guest redirect to /admin/dashboard

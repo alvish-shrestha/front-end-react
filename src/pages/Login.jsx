@@ -22,14 +22,14 @@ export default function Login() {
   return (
     <div>
       <div>Login Page</div>
-      <Link to="/register">Link to page</Link>
-      <NavLink to="/register">NavLink to page</NavLink>
+      {/* <Link to="/register">Link to page</Link> */}
+      {/* <NavLink to="/register">NavLink to page</NavLink>
       <button onClick={eventChangePage}>Event based</button>
       <button onClick={
         (event) => {
           eventChangePage(event)
         }
-      }>Event based with Callback</button>
+      }>Event based with Callback</button> */}
 
       <div>
         <LoginForm />
