@@ -8,3 +8,7 @@
 // check the iinput on button submit, check of empty input
 // if input is empty setMessage to "Provide all information"
 // else asetMessage "Congratulation"
+
+
+check user if user in state return
+html with "User already logged in"
