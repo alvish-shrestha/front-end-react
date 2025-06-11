@@ -41,6 +41,7 @@ export default function LoginForm() {
                     value={formik.values.email} // should match the state
                 >
                 </input>
+                <br />
                 {
                     formik.touched.email && formik.errors.email && 
                     <p>{formik.errors.email}</p>

@@ -8,26 +8,47 @@ import StateManage from '../pages/StateManage'
 import StateLoginTest from '../pages/StateLoginTest'
 import GuestRoute from './GuestRoute'
 import NormalUserRoute from './NormalUserRoute'
+import AdminUserRoute from './AdminUserRoute'
+import AdminLayout from '../layouts/AdminLayout'
+import UserManagement from '../pages/admin/UserManagement'
 
 export default function AppRouter() {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path='/state' element={<StateManage />}></Route>
         <Route path='/login-test' element={<StateLoginTest />}></Route>
+
+        {/* Main Layout */}
         <Route element={<MainLayout />}>
           {/* main layout will show in every routes below */}
           <Route path='/' element={<Homepage />}></Route>
+
           <Route element={<GuestRoute />}>
             <Route path='/login' element={<Login />}></Route>
             <Route path='/register' element={<Register />}></Route>
           </Route>
         </Route>
 
+        {/* Normal user routes */}
         <Route path='/user/*' element={<NormalUserRoute />}>
           <Route path='cart' element={<>My Cart</>} />
           <Route path='order' element={<>My Order</>} />
           <Route path='*' element={<>404 Not Found</>} />
+        </Route>
+
+        {/* Admin routes */}
+        <Route path='/admin/*' element={<AdminUserRoute />}>
+        
+          <Route element={<AdminLayout />}>
+            <Route path="users" element={<UserManagement />} />
+            <Route path="dashboard" element={<>Admin Dashboard</>} />
+            <Route path="profile" element={<>Manage Users</>} />
+            <Route path="categories" element={<>Manage Categories</>} />
+            <Route path="products" element={<>Manage Products</>} />
+            <Route path="*" element={<>404 Not Found</>} />
+          </Route>
         </Route>
 
       </Routes>

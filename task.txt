@@ -19,7 +19,7 @@ create /admin/dashboard
 /admin/users
 /admin/categories
 /admin/products
-Make a new AdminLayout /src/AdminLayout
+Make a new AdminLayout /src/layouts/AdminLayout
 with header -> button logout
 Apply AdminLayout for these route
 Apply Admin Route Protection for these route

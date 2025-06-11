@@ -3,12 +3,12 @@ import { AuthContext } from "../auth/AuthProvider";
 import { useContext } from "react";
 import React from 'react'
 
-export default function NormalUserRoute() {
+export default function AdminUserRoute() {
     const { user, loading } = useContext(AuthContext)
 
     if (loading) return <>Loading...</>
     if (!user) return <Navigate to="/login" />
-    if (user.role !== "normal") return <Navigate to="/"/>
+    if (user.role !== "admin") return <Navigate to="/"/>
 
-    return <Outlet/>
+    return <Outlet />
 }
