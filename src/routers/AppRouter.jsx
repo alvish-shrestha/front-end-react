@@ -11,6 +11,7 @@ import NormalUserRoute from './NormalUserRoute'
 import AdminUserRoute from './AdminUserRoute'
 import AdminLayout from '../layouts/AdminLayout'
 import UserManagement from '../pages/admin/UserManagement'
+import ProductManagement from '../pages/admin/ProductManagement'
 
 export default function AppRouter() {
   return (
@@ -42,11 +43,11 @@ export default function AppRouter() {
         <Route path='/admin/*' element={<AdminUserRoute />}>
         
           <Route element={<AdminLayout />}>
-            <Route path="users" element={<UserManagement />} />
+            <Route path="usesrs" element={<UserManagement />} />
             <Route path="dashboard" element={<>Admin Dashboard</>} />
             <Route path="profile" element={<>Manage Users</>} />
             <Route path="categories" element={<>Manage Categories</>} />
-            <Route path="products" element={<>Manage Products</>} />
+            <Route path="products" element={<ProductManagement />} />
             <Route path="*" element={<>404 Not Found</>} />
           </Route>
         </Route>

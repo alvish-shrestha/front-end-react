@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 export default function MainLayout() {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
         <Header/>
         <Outlet/> {/* renders child */}
         <Footer/>
