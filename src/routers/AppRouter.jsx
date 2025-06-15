@@ -12,6 +12,8 @@ import AdminUserRoute from './AdminUserRoute'
 import AdminLayout from '../layouts/AdminLayout'
 import UserManagement from '../pages/admin/UserManagement'
 import ProductManagement from '../pages/admin/ProductManagement'
+import CategoryManagement from '../pages/admin/CategoryManagement'
+import CreateCategory from '../pages/admin/CreateCategory'
 
 export default function AppRouter() {
   return (
@@ -46,7 +48,8 @@ export default function AppRouter() {
             <Route path="usesrs" element={<UserManagement />} />
             <Route path="dashboard" element={<>Admin Dashboard</>} />
             <Route path="profile" element={<>Manage Users</>} />
-            <Route path="categories" element={<>Manage Categories</>} />
+            <Route path="categories" element={<CategoryManagement />} />
+            <Route path="categories/create" element={<CreateCategory />} />
             <Route path="products" element={<ProductManagement />} />
             <Route path="*" element={<>404 Not Found</>} />
           </Route>
