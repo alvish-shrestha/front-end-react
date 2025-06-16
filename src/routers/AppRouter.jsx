@@ -14,6 +14,8 @@ import UserManagement from '../pages/admin/UserManagement'
 import ProductManagement from '../pages/admin/ProductManagement'
 import CategoryManagement from '../pages/admin/CategoryManagement'
 import CreateCategory from '../pages/admin/CreateCategory'
+import ViewCategory from '../pages/admin/ViewCategory'
+import UpdateCategory from '../pages/admin/UpdateCategory'
 
 export default function AppRouter() {
   return (
@@ -50,6 +52,8 @@ export default function AppRouter() {
             <Route path="profile" element={<>Manage Users</>} />
             <Route path="categories" element={<CategoryManagement />} />
             <Route path="categories/create" element={<CreateCategory />} />
+            <Route path="categories/:id" element={<ViewCategory />} />
+            <Route path="categories/:id/edit" element={<UpdateCategory />} />
             <Route path="products" element={<ProductManagement />} />
             <Route path="*" element={<>404 Not Found</>} />
           </Route>

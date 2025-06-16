@@ -1,4 +1,5 @@
-import { getAllCategoryApi, createOneCategoryApi } from "../../api/admin/categoryApi";
+import { data } from "autoprefixer";
+import { getAllCategoryApi, createOneCategoryApi, getOneCategoryApi, updateOneCategoryApi } from "../../api/admin/categoryApi";
 
 export const getAllCategoryService = async () => {
     try {
@@ -15,5 +16,23 @@ export const createOneCategoryService = async (data) => {
         return response.data
     } catch (err) {
         throw err.response?.data || { message: "Failed to create" }
+    }
+}
+
+export const getOneCategoryService = async (id) => {
+    try {
+        const response = await getOneCategoryApi(id, data)
+        return response.data
+    } catch (err) {
+        throw err.response?.data || { message: "Failed to load" }   
+    }
+}
+
+export const updateOneCategoryService = async (id) => {
+    try {
+        const response = await updateOneCategoryApi(id, data)
+        return response.data
+    } catch (err) {
+        throw err.response?.data || { message: "Failed to upload" }   
     }
 }

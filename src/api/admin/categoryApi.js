@@ -11,3 +11,13 @@ export const createOneCategoryApi = (data) => axios.post(
         }
     }
 )
+
+export const getOneCategoryApi = (id) => axios.get("/admin/category/" + id)
+
+export const updateOneCategoryApi = (id, data) => 
+    axios.put("/admin/category/" + id, data, {
+        headers: {
+            "Content-Type": "multipart/form-data"
+        }
+    }
+) // if update has image/file upload
