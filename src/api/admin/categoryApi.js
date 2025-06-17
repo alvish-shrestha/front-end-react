@@ -21,3 +21,6 @@ export const updateOneCategoryApi = (id, data) =>
         }
     }
 ) // if update has image/file upload
+
+export const deleteOneCategoryApi = (id) =>
+    axios.delete("/admin/category/" + id)

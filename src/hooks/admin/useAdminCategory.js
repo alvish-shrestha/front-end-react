@@ -1,5 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getAllCategoryService, createOneCategoryService, getOneCategoryService, updateOneCategoryService } from "../../services/admin/categoryService";
+import { getAllCategoryService, createOneCategoryService, getOneCategoryService, updateOneCategoryService, deleteOneCategoryService } from "../../services/admin/categoryService";
 import { data } from "autoprefixer";
 import { toast } from "react-toastify";
 
@@ -63,6 +63,23 @@ export const useUpdateOneCategory = () => {
             },
             onError: (err) => {
                 toast.error(err.message || "Update failed")
+            }
+        }
+    )
+}
+
+export const useDeleteOneCategory = () => {
+    const queryClient = useQueryClient()
+    return useMutation(
+        {
+            mutationFn: deleteOneCategoryService,
+            mutationKey: ["admin_category_delete"],
+            onSuccess: () => {
+                toast.success("Deleted")
+                queryClient.invalidateQueries(["admin_category"])
+            },
+            onError: (err) => {
+                toast.error(err.message || "Delete Failed")
             }
         }
     )

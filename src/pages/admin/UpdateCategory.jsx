@@ -7,7 +7,7 @@ import { getBackendImageUrl } from '../../utils/backend-image'
 
 export default function UpdateCategory() {
     const { id } = useParams()
-    const categoryHook = useGetOneCategory()
+    const categoryHook = useGetOneCategory(id)
     const updateCategoryHook = useUpdateOneCategory()
 
     // const { data, error } = useGetOneCategory()
@@ -33,9 +33,11 @@ export default function UpdateCategory() {
             },
             validationSchema,
             onSubmit: (values) => {
+                console.log(values);
                 const formData = new FormData()
                 formData.append("name", values.name)
                 if (values.image) formData.append("image", values.image)
+                    
                 updateCategoryHook.mutate(
                     { id, data: formData },
                     {
