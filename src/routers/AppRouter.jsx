@@ -16,6 +16,8 @@ import CategoryManagement from '../pages/admin/CategoryManagement'
 import CreateCategory from '../pages/admin/CreateCategory'
 import ViewCategory from '../pages/admin/ViewCategory'
 import UpdateCategory from '../pages/admin/UpdateCategory'
+import RequestPassword from '../pages/RequestPassword'
+import ResetPassword from '../pages/ResetPassword'
 
 export default function AppRouter() {
   return (
@@ -33,6 +35,8 @@ export default function AppRouter() {
           <Route element={<GuestRoute />}>
             <Route path='/login' element={<Login />}></Route>
             <Route path='/register' element={<Register />}></Route>
+            <Route path='/request-reset-password' element={<RequestPassword />}></Route>
+            <Route path='/reset/password/:token' element={<ResetPassword />}></Route>
           </Route>
         </Route>
 
@@ -47,7 +51,7 @@ export default function AppRouter() {
         <Route path='/admin/*' element={<AdminUserRoute />}>
         
           <Route element={<AdminLayout />}>
-            <Route path="usesrs" element={<UserManagement />} />
+            <Route path="users" element={<UserManagement />} />
             <Route path="dashboard" element={<>Admin Dashboard</>} />
             <Route path="profile" element={<>Manage Users</>} />
             <Route path="categories" element={<CategoryManagement />} />
